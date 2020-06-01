@@ -1,0 +1,34 @@
+mixin top-pharmacy__item(text, className)
+  li(class="top-pharmacy__item " + className + "" style='order: 1;')
+    .top-pharmacy__item-inn
+      .top-pharmacy__left
+        +svg('arrow')
+      .top-pharmacy__right
+        span #{text}
+
+//begin top
+.top
+  //begin top__header
+  .top__header.top-header
+    .top-header__logo
+      img(src="assets/img/logo.svg" alt="logo")
+    .top-header__descr
+      h3.top-header__subtitle Apothekee<br>Im Hauptbahnhof
+      h2.top-header__title Freie Kassen
+  //end top__header
+
+  //begin top__pharmacy
+  .top__pharmacy.top-pharmacy
+    .top-pharmacy__free#top-pharmacy__free
+      .top-pharmacy__row
+        .top-pharmacy__icon
+          +svg('smile')
+        h2.top-pharmacy__title Alle Kassen sind besetzt
+    ul.top-pharmacy__list
+      +top-pharmacy__item('Kasse 1', '')
+      +top-pharmacy__item('Kasse 2', '')
+      +top-pharmacy__item('Kasse 3', '')
+      +top-pharmacy__item('Kasse 4', '')
+      +top-pharmacy__item('Kasse 5', 'disabled')
+  //end top__pharmacy
+//end top

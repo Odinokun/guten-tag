@@ -1,0 +1,16 @@
+extends ../_template
+
+block variables
+  - var title       = 'Guten tag'
+  - var description = 'Guten tag'
+  - var ogtitle     = 'Guten tag'
+  - var ogimage     = 'assets/img/social.jpg'
+
+block content
+  //begin content
+  main.main
+    include ../sections/top
+    //include ../sections/bottom
+  //end content
+
+  include ../sections/scripts
