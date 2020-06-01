@@ -2,13 +2,14 @@ module.exports = function() {
 
   // begin Slick slider
 
-  $('.slick').slick({
-    dots: true,
+  $('#bottom-slider__list').slick({
     infinite: true,
-    speed: 500,
-    fade: true,
-    autoplay: true,
-    cssEase: 'linear'
+    dots: false,
+    arrows: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay:true,
+    autoplaySpeed: 5000
   });
 
   // end Slick slider

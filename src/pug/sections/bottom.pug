@@ -1,1 +1,25 @@
+mixin bottom-slider__item(pic)
+  li.bottom-slider__item
+    .bottom-slider__sale
+      span.bottom-slider__sale-num 30%
+      span.bottom-slider__sale-text Gespart
+
+    .bottom-slider__pic
+      img(src="assets/img/img-" + pic + ".jpg" alt="picture")
+    h3.bottom-slider__title PARACETAMOL-RATIOPHARM
+    .bottom-slider__description Zahnpasta Vorteilspack+100 ml Spülung
+    .bottom-slider__price 44,98€
+    .bottom-slider__specification
+      span statt 48,98
+      span 10 ml (79,50€ pro 100 ml)
+      span PZN 13332904
+
+//begin bottom
 .bottom
+  .bottom__slider.bottom-slider
+    ul.bottom-slider__list#bottom-slider__list
+      +bottom-slider__item('02')
+      +bottom-slider__item('01')
+      +bottom-slider__item('02')
+      +bottom-slider__item('03')
+//end bottom

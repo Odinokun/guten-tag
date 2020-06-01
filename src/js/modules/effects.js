@@ -8,6 +8,8 @@ module.exports = function() {
   $('.top-pharmacy__item').on('click', function() {
     let disabledItem =  $('.top-pharmacy__item.disabled');
 
+    soundClick();
+
     //засовываем нужный элемент вниз списка
     $(disabledItem).css('order', order);
     order += 1;
@@ -35,9 +37,10 @@ module.exports = function() {
     }
   });
 
-  //анимация мигания цвета
-  $('.top-pharmacy__item').on('click', function() {
-    $('.top-pharmacy__item.disabled').find('.top-pharmacy__left').addClass('active');
-    $(this).find('.top-pharmacy__left').removeClass('active');
-  });
+  //проигрывание звука
+  function soundClick() {
+    let audio = new Audio();
+    audio.src = 'assets/img/ring.mp3';
+    audio.autoplay = true;
+  }
 };

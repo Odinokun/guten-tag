@@ -1,5 +1,9 @@
 .top {
   width: 50%;
+  @include max(1100) {
+    width: 100%;
+    height: 50vh;
+  }
 }
 
 //begin #TOP HEADER
@@ -7,6 +11,9 @@
   display: flex;
   width: 100%;
   height: 193px;
+  @include max(1100) {
+    border-right: 5px solid #fff;
+  }
 }
 
 .top-header__logo {
@@ -48,56 +55,69 @@
 //begin #MAIN LIST
 
 .top-pharmacy {
+  position: relative;
   display: flex;
+  width: 100%;
   height: calc(100% - 193px);
   background-color: #f1f8f0;
-  width: 100%;
-  position: relative;
+}
+.top-pharmacy__audio{
+  opacity: 0;pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0);
 }
 
-.top-pharmacy__free{
-  z-index: 5;
-  transform: translateX(-100%);
-  display: flex;
-  transition: transform .5s;
-  border-bottom: 5px solid #fff;
-  border-left: 5px solid #fff;
+.top-pharmacy__free {
   position: absolute;
+  z-index: 5;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #49AD33;
   width: 100%;
-  &.active{
-  transform: translateX(0);
+  transition: transform .5s;
+  transform: translateX(-100%);
+  border-bottom: 5px solid #fff;
+  border-left: 5px solid #fff;
+  background-color: #49ad33;
+  @include max(1100) {
+  border-right: 5px solid #fff;
 
   }
+  &.active {
+    transform: translateX(0);
+  }
 }
-.top-pharmacy__row{
+
+.top-pharmacy__row {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.top-pharmacy__icon{
+
+.top-pharmacy__icon {
   width: 96px;
   height: 96px;
   margin-bottom: 20px;
   svg {
+    fill: #ffe623;
     width: 96px;
     height: 96px;
-    fill:#FFE623;
   }
 }
-.top-pharmacy__title{
-  font-weight: bold;
+
+.top-pharmacy__title {
   font-size: 48px;
+  font-weight: bold;
   line-height: 56px;
-  text-align: center;
   max-width: 270px;
-  color: #FFFFFF;
+  text-align: center;
+  color: #fff;
 }
 
 .top-pharmacy__list {
@@ -129,15 +149,13 @@
 }
 
 .top-pharmacy__item-inn {
-  animation: itemIn .5s forwards .5s;
+  position: relative;
   display: flex;
   width: 100%;
   height: 100%;
+  animation: itemIn .5s forwards .5s;
   border-bottom: 5px solid #fff;
-  position: relative;
 }
-
-
 
 .top-pharmacy__left {
   display: flex;
@@ -145,6 +163,8 @@
   align-items: center;
   flex: none;
   width: 193px;
+  border-left: 5px solid #fff;
+  border-right: 5px solid #fff;
   transition: background-color .5s;
   background-color: #fff;
   &.active {
@@ -204,12 +224,11 @@
     background-color: #fff;
   }
   50% {
-    background-color: #FFE623;
+    background-color: #ffe623;
   }
   100% {
     background-color: #fff;
   }
 }
-
 
 //end #MAIN LIST
