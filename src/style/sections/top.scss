@@ -147,6 +147,10 @@
   width: 193px;
   transition: background-color .5s;
   background-color: #fff;
+  &.active {
+    animation: changeColor 1.5s;
+    animation-iteration-count: 6;
+  }
   svg {
     fill: #49ad33;
     width: 64px;
@@ -194,4 +198,18 @@
     transform: translateX(0%);
   }
 }
+
+@keyframes changeColor {
+  0% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: #FFE623;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+
+
 //end #MAIN LIST

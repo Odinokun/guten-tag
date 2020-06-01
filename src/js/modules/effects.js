@@ -4,20 +4,26 @@ module.exports = function() {
   let listLength = $('.top-pharmacy__item').length;
   let order = listLength;
 
+  //скрытие-появление касс
   $('.top-pharmacy__item').on('click', function() {
-    let item =          $('.top-pharmacy__item');
     let disabledItem =  $('.top-pharmacy__item.disabled');
 
     //засовываем нужный элемент вниз списка
     $(disabledItem).css('order', order);
     order += 1;
 
+    //добавляем класс для мигания желным цветом
+    $(disabledItem).find('.top-pharmacy__left').addClass('active');
     //убираем класс disabled у открывающегося элемента
     $(disabledItem).removeClass('disabled');
 
     //убираем элемент по клику
     $(this).addClass('disabled');
+    $(this).find('.top-pharmacy__left').removeClass('active');
+  });
 
+  //анимация при всех открытых кассах
+  $('.top-pharmacy__item').on('click', function() {
     //кол-во скрытых элементов
     let listDisabledLength = $('.top-pharmacy__item.disabled').length;
 
@@ -29,5 +35,9 @@ module.exports = function() {
     }
   });
 
-
+  //анимация мигания цвета
+  $('.top-pharmacy__item').on('click', function() {
+    $('.top-pharmacy__item.disabled').find('.top-pharmacy__left').addClass('active');
+    $(this).find('.top-pharmacy__left').removeClass('active');
+  });
 };
